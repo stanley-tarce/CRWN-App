@@ -3,14 +3,19 @@ import ShopPage from './Components/Shop/shop';
 import './App.css';
 import Homepage from './Pages/Homepage/Homepage.js'
 import { useRoutes } from 'react-router-dom'
+import Header from './Pages/Header/header.component';
 
 function App() {
   let routes = useRoutes([
-    { path: '/', element: <Homepage />, exact: true },
+    { path: '/', element: <Homepage /> },
     { path: '/shop', element: <ShopPage /> },
   ])
-  console.log(routes)
-  return routes;
+  return (
+    <div>
+      <Header />
+      {routes}
+    </div>
+  );
 }
 
 export default App;
